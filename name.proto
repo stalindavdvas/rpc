@@ -1,0 +1,15 @@
+syntax = "proto3";  // Especifica que estamos utilizando Protocol Buffers v3
+
+// Definimos el servicio NameService
+service NameService {
+    // El método GetName no recibe ningún dato (Empty) y devuelve un mensaje Name
+    rpc GetName (Empty) returns (Name) {}
+}
+
+// Definimos un mensaje vacío que se utilizará en la solicitud
+message Empty {}
+
+// Definimos el mensaje Name que será la respuesta, contiene un campo 'name'
+message Name {
+    string name = 1;  // Campo 'name' de tipo string
+}
